@@ -1,0 +1,5 @@
+test:
+    :url: "https://portal-staging.parent.eu/login"
+
+staging:
+    :url: write the enviomrnt url
