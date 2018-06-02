@@ -12,6 +12,6 @@ Sample test project using Ruby, Cucumber, Capybara, RSpec.
 ```
 gem install bundler
 bundle install
-bundle exec cucumber -r features features/create_event.feature -f html -o all_tests.html
+bundle exec cucumber -r features features/create_event.feature -f html -o create_event_result.html
 ```
 
