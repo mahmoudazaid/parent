@@ -45,7 +45,9 @@ capabilities['browserName'] = ENV['SELENIUM_BROWSER'] || 'chrome'
 capabilities['version'] = ENV['SELENIUM_VERSION'] if ENV['SELENIUM_VERSION']
 
 # browser = Selenium::WebDriver.for(:remote, :url => url, :desired_capabilities => capabilities)
-
+Capybara.register_driver :htmlunitdriver do
+  
+end
 
 Capybara.register_driver :selenium do |app|
   profile = Selenium::WebDriver::Firefox::Profile.new

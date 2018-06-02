@@ -5,18 +5,15 @@ Given /^[I ]*am on login page$/ do
   visit($BASE_URL)
 end
 
-Given /^I have entered "([^"]*)" into "([^"]*)" field$/ do|text,field|
-  page.find(:xpath,"//input[@placeholder='#{field}']").set(text)
-end
-
-Given /^I have entered valid password into the password field$/ do
-  fill_in 'Password', :with => ENV['ADMIN_PASSWORD']
+Given /^I have entered valid (Email|Password): "([^"]*)"$/ do|field,text|
+  page.find(:xpath,"//input[@placeholder='#{field}']").send_keys(text)
 end
 
 Given /^I logged as admin/ do
   step %{I am on login page}
-  step %{I have entered "#{ENV['ADMIN_USERNAME']}" into "Email" field}
-  step %{I have entered "#{ENV['ADMIN_PASSWORD']}" into "Password" field}
+  step %{I wait for 60 seconds}
+  step %{I have entered valid Email: "#{ENV['ADMIN_USERNAME']}"}
+  step %{I have entered valid Password: "#{ENV['ADMIN_PASSWORD']}"}
   step %{I click the "Login" button}
 end
 
