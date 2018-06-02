@@ -14,4 +14,3 @@ gem install bundler
 bundle install
 bundle exec cucumber -r features features/create_event.feature -f html -o create_event_result.html
 ```
-
